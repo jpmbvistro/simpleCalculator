@@ -1,0 +1,148 @@
+/* Shay Howe */
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/*for grouping floating elements*/
+.group:before,
+.group:after {
+  content: "";
+  display: table;
+}
+.group:after {
+  clear: both;
+}
+.group {
+  clear: both;
+  *zoom: 1;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
+body {
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  color: #353839;
+  background-color: grey;
+}
+
+header {
+  margin: 1rem auto;
+  font-size: 3rem;
+  padding-top: 4rem;
+}
+
+.display {
+  font-size: 5rem;
+}
+
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+
+
+/* Button styling inspired by https://pomofocus.io/ */
+
+button {
+  min-height: 6rem;
+  flex-grow: 1;
+  flex-wrap: wrap;
+  border: none;
+  background-color: white;
+  color: #d7a498;
+  border-radius: 5%;
+  font-size: 4rem;
+  cursor: pointer;
+  padding: .5rem 1rem;
+  box-shadow: rgb(235 235 235) 0px 6px 0px;
+  margin-bottom: 1rem;
+}
+
+button:active {
+  outline: none;
+  box-shadow: none;
+  border: none;
+  transition: color 0.5s ease-in-out 0s;
+  margin-bottom: .5rem;
+}
+
+button + button:active {
+  margin-top: .5rem;
+}
+
+button:focus {
+  outline: -webkit-focus-ring-color auto 1px;
+  outline: none;
+
+  border: none;
+}
+
+/* button + button{
+  margin-top: 1rem;
+} */
+
+header {
+
+}
+
+footer {
+
+}
+
+.buttons {
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.buttons > section {
+  flex-direction: column;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.buttons > section + section {
+  margin-left: 1rem;
+}
+
+.flex-container {
+  display: flex;
+  align-items: flex-end;
+}
+
+.main {
+  background-color: #d7a498;
+  color: white;
+}
+
+.readable-width {
+  max-width: 40rem;
+  margin: 0 auto;
+  border-radius: 5rem;
+}
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
+@media only screen and (max-width: 700px) {
+  section {
+    background: blue;
+    width: 100%;
+  }
+}
+
+@media (min-width: 701px) and (max-width: 1024) {
+  section {
+    background: green;
+    }
+}
