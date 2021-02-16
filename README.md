@@ -17,3 +17,7 @@ If you would like to work with me, feel free to contact me through [my website](
 
 ### Contributions
 At this moment, I am currently not accepting contributions for this project.
+
+### Inspirations
+
+Button aesthetics were inspired in part by https://pomofocus.io/
