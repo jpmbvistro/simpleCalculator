@@ -33,6 +33,10 @@ body {
   background-color: grey;
 }
 
+h1 {
+  font-size: min(4rem, 10vw);
+}
+
 header {
   margin: 1rem auto;
   font-size: 3rem;
@@ -40,7 +44,7 @@ header {
 }
 
 .display {
-  font-size: 5rem;
+  font-size: min(5rem, 20vw);
 }
 
 
@@ -52,16 +56,16 @@ header {
 /* Button styling inspired by https://pomofocus.io/ */
 
 button {
-  min-height: 6rem;
+  /* height: min(6rem) */
   flex-grow: 1;
   flex-wrap: wrap;
   border: none;
   background-color: white;
   color: #d7a498;
   border-radius: 5%;
-  font-size: 4rem;
+  font-size: min(4rem, 10vw);
   cursor: pointer;
-  padding: .5rem 1rem;
+  padding: .5rem min(1rem, 5vw);
   box-shadow: rgb(235 235 235) 0px 6px 0px;
   margin-bottom: 1rem;
 }
@@ -102,7 +106,7 @@ footer {
   align-items: center;
   justify-content: center;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 2rem min(2rem, 2vw);
 }
 
 .buttons > section {
@@ -112,7 +116,7 @@ footer {
 }
 
 .buttons > section + section {
-  margin-left: 1rem;
+  margin-left: min(1rem, 2vw);
 }
 
 .flex-container {
@@ -123,18 +127,207 @@ footer {
 .main {
   background-color: #d7a498;
   color: white;
+  position: relative;
 }
 
 .readable-width {
   max-width: 40rem;
   margin: 0 auto;
-  border-radius: 5rem;
+  border-radius: 2rem;
 }
 
 /******************************************
 /* ADDITIONAL STYLES
 /*******************************************/
-@media only screen and (max-width: 700px) {
+
+/*Side info panel*/
+/**
+Info Button Styling
+*/
+
+.info-button {
+  background-color: rgba(255,255, 255,.3);
+  border: none;
+  padding: 0 1rem .5rem 1rem;
+  color: white;
+  font-weight: 700;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  position: absolute;
+  top:1rem;
+  left: 1rem;
+  ouline: none;
+  cursor: pointer;
+  box-shadow: none;
+}
+
+.info-button:hover {
+  background-color: rgba(255,255, 255,.5);
+}
+
+.info-button:active,
+.info-button:focus{
+  outline:none;
+}
+
+.info-button:active {
+  box-shadow: inset 0 0 3px 0px rgba(0,0,0,.7);
+}
+
+/**
+End Info Button styling
+*/
+
+/*
+Aside Styling
+*/
+aside {
+  color: white;
+  text-align: left;
+  background-color: rgb(43, 43, 43);
+  width: min(30rem, 100%);
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  transition: .3s;
+  transform: translateX(-100%);
+  /* overflow-y: scroll; */
+}
+
+aside.reveal{
+  transform: none;
+}
+
+aside > * {
+  margin: 0 auto;
+  width: min(90%, 25rem);
+}
+
+aside a {
+  text-decoration: none;
+  color: white;
+}
+
+aside h4 {
+  font-size: 2rem;
+  margin-top: 5vh;
+  margin-bottom: .5rem;
+}
+
+aside h5 {
+  font-size: 1.2rem;
+}
+
+aside h5,
+aside h6{
+  margin-top: 1rem;
+  margin-bottom: .5rem;
+}
+
+aside .collab-button {
+  width: 8rem;
+  margin: 3rem auto 0 auto;
+  text-align: center;
+}
+
+aside .hide-aside{
+  width: 2rem;
+  height: 2rem;
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  color: white;
+/*   background-color: rgba(0,0,0,0); */
+  opacity: .3;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+aside .hide-aside:hover {
+  opacity: 1;
+}
+
+aside .hide-aside:before,
+aside .hide-aside:after{
+  position: absolute;
+  height: 2rem;
+  background-color: white;
+  width: 2px;
+  content: ' ';
+  left: 1rem;
+}
+
+aside .hide-aside:before {
+  transform: rotate(45deg);
+}
+
+aside .hide-aside:after {
+  transform: rotate(-45deg);
+}
+
+aside .hide-aside:hover {
+
+  outline: none;
+}
+
+aside .hide-aside:active,
+aside .hide-aside:focus {
+  outline: none;
+}
+
+@media only screen and (max-width: 500px) {
+  aside .hide-aside {
+    top: .25rem;
+    right: .25rem;
+  }
+}
+
+aside .external-links {
+  text-decoration: underline;
+
+}
+
+aside .portfolio-link {
+  margin: 0 auto;
+  text-align: center;
+}
+
+aside .portfolio-link{
+  width: 8rem;
+  margin-top: 3rem;
+  font-size: 1rem;
+  font-weight: 100;
+  border: 1px solid white;
+  text-align: center;
+  padding: 1rem .5rem;
+  background-color: rgb(43, 43, 43);
+  color: white;
+  cursor: pointer;
+  box-shadow: none;
+}
+
+aside button.portfolio-link:hover {
+  boxshadow: inset 0 0 1 3 white;
+}
+
+aside .profile-container {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-left: 3rem;
+  width: max(5rem, 30%);
+}
+
+aside .profile-container img {
+  width: 100%;
+  border-radius: 50%;
+}
+
+/*end Aside*/
+
+/*Side info panel end*/
+/* @media only screen and (max-width: 700px) {
   section {
     background: blue;
     width: 100%;
@@ -145,4 +338,4 @@ footer {
   section {
     background: green;
     }
-}
+} */

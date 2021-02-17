@@ -1,5 +1,5 @@
 const numDisplay = document.querySelector('#display')
-const buttons = document.querySelectorAll('button')
+const buttons = document.querySelectorAll('.calc-button')
 const buttonOperators = document.querySelectorAll('.operator')
 Array.from(buttons).forEach(element => element.addEventListener('click', buttonPress))
 
@@ -76,3 +76,15 @@ function opFocus(opID) {
   Array.from(buttonOperators).forEach(element => element.style.boxShadow = none)
   document.querySelector(`#${opID}`).style.boxShadow = '0px 0px 5px 1px red'
 }
+
+/**
+Aside panel functionality
+**/
+document.querySelector('.info-button').addEventListener('click', toggleAside)
+document.querySelector('#hide-aside').addEventListener('click', toggleAside)
+
+function toggleAside(){       document.querySelector('aside').classList.toggle('reveal')
+}
+/**
+Aside Panel end
+*/
